@@ -1,0 +1,16 @@
+[package]
+name = "chanlun-engine"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "组合回测引擎：单资金池撮合、可成交性/流动性闸门、滑点、双资金口径、绩效统计"
+
+[dependencies]
+chanlun-core = { path = "../chanlun-core" }
+chanlun-data = { path = "../chanlun-data" }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+
+[dev-dependencies]
+tempfile = "3"

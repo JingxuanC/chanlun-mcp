@@ -1,0 +1,24 @@
+[package]
+name = "chanlun-mcp"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "缠论二买策略 MCP 服务器（stdio）+ 异步回测 job + 数据/跟单工具"
+
+[[bin]]
+name = "chanlun-mcp"
+path = "src/main.rs"
+
+[dependencies]
+chanlun-core = { path = "../chanlun-core" }
+chanlun-data = { path = "../chanlun-data" }
+chanlun-engine = { path = "../chanlun-engine" }
+serde = { workspace = true }
+serde_json = { workspace = true }
+anyhow = { workspace = true }
+clap = { workspace = true }
+thiserror = { workspace = true }
+rmcp = { version = "3", features = ["transport-io", "schemars"] }
+schemars = "1"
+tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] }
+# rmcp 3.x（官方 Rust MCP SDK）stdio 传输 + schemars 1.0 生成工具入参 schema

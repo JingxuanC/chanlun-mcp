@@ -1,0 +1,17 @@
+[package]
+name = "chanlun-data"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "60min 行情仓：本地存储、公开数据源适配、多源交叉校验、数据健康检查"
+
+[dependencies]
+chanlun-core = { path = "../chanlun-core" }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+csv = "1"
+ureq = { version = "3", features = ["json"] }
+
+[dev-dependencies]
+tempfile = "3"
